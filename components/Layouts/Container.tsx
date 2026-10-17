@@ -5,7 +5,7 @@ export default function Container({ children }: { children: React.ReactNode }) {
 
       <main className="w-full bg-background px-4">{children}</main>
 
-      <div className="border-l border-(--border) bg-[repeating-linear-gradient(45deg,var(--pattern)_0,var(--pattern)_1px,transparent_0,transparent_12px)] bg-size-[16px_16px]" />
+      <div className="border-l border-(--border) bg-[repeating-linear-gradient(135deg,var(--pattern)_0,var(--pattern)_1px,transparent_0,transparent_12px)] bg-size-[16px_16px]" />
     </div>
   );
 }

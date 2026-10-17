@@ -6,7 +6,7 @@ import InstallCommand from "@/components/Shared/InstallCommand";
 
 export default function HeroSection() {
   return (
-    <div className="my-4 border border-(--border)">
+    <div className="my-4 border-y border-(--border)">
       <Container>
         <div className="py-3 relative">
           <Name />

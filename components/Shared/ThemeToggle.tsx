@@ -32,7 +32,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className="p-1 border border-(--border) rounded-md transition-colors hover:bg-(--surface)"
+      className="p-1.5 border border-(--border) rounded-md transition-colors hover:bg-(--surface)"
     >
       {theme === "dark" ? (
         <MdWbSunny size={18} />

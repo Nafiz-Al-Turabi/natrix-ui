@@ -21,9 +21,9 @@
 /* OS-level preference fallback: if no theme saved yet, respect system setting */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --background: #0a0a0a;
+    --background: #212121;
     --foreground: #ededed;
-    --surface: #1a1a1a;
+    --surface: #807575;
     --border: rgba(255, 255, 255, 0.12);
     --pattern: #27272a;
   }

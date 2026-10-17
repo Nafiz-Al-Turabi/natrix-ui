@@ -7,7 +7,7 @@ import { TbLayoutSidebarLeftCollapse } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../Shared/ThemeToggle";
 
-const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
+const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -126,4 +126,4 @@ const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
-export default ClientLayout;
+export default UIMainLayout;

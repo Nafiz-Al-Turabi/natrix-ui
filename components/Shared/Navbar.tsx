@@ -14,7 +14,7 @@ export default function Navbar() {
             <span className="mb-2">Natrix</span>
           </Link>
           <div className="flex gap-4 items-center">
-            <button className="bg-grad px-3 py-1 rounded-md font-lg text-black/80 font-bold ">
+            <button className="px-3 py-1 rounded-md font-lg border border-(--border) font-bold ">
               Get Started
             </button>
             <ThemeToggle />

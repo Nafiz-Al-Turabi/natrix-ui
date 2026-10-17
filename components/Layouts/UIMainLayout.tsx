@@ -12,6 +12,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const pathname = usePathname();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigation = [
     {
@@ -42,6 +43,14 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
     },
   ];
 
+  const filteredNavigation = navigation
+    .map((section) => ({
+      ...section,
+      items: section.items.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
+    }))
+    .filter((section) => section.items.length > 0);
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
@@ -77,8 +86,17 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
+        <div className="px-4 py-2">
+          <input
+            type="text"
+            placeholder="Search ui"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full rounded border border-(--border) outline-none px-3 py-2 text-sm text-gray-600 placeholder-gray-400 focus:border-lime-500 focus:border"
+          />
+        </div>
         <nav className="h-full overflow-y-auto px-4 py-6">
-          {navigation.map((section) => (
+          {filteredNavigation.map((section) => (
             <div key={section.title} className="mb-7">
               <div className="mb-2 flex items-center justify-between px-3">
                 <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -112,6 +130,9 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
             </div>
           ))}
         </nav>
+        {filteredNavigation.length === 0 && (
+          <p className="p-4 text-center text-gray-500">No pages found</p>
+        )}
       </aside>
 
       {/* Main Content */}

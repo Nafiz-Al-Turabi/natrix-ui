@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+/* Light theme (default) — set on :root so all elements inherit vars immediately */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --surface: #f5f5f5;
+  --border: rgba(0, 0, 0, 0.12);
+}
+
+/* Dark theme — overrides when data-theme="dark" is set on <html> */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+/* OS-level preference fallback: if no theme saved yet, respect system setting */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --surface: #1a1a1a;
+    --border: rgba(255, 255, 255, 0.12);
+  }
 }
 
 @theme inline {
@@ -12,17 +33,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .bg-grad {

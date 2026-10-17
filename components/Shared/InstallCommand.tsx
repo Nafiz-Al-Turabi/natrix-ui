@@ -78,7 +78,7 @@ export default function InstallCommand({
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-xs text-black font-medium transition-colors hover:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded bg-gray-100 px-3 py-1.5 text-xs text-black font-medium transition-colors hover:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
           aria-label="Copy install command"
         >
           {copied ? (

@@ -4,7 +4,7 @@ import Container from "../Layouts/Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-(--border) ">
+    <footer className="border-y border-(--border) ">
       <Container>
         {" "}
         <div className="px-4 grid grid-cols-1 gap-8 md:grid-cols-3  py-10">

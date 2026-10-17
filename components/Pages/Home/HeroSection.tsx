@@ -20,9 +20,9 @@ export default function HeroSection() {
             modular React UI components.
           </p>
         </div>
-        <div className="flex justify-center mt-4">
-          <button className="flex items-center gap-2 border border-(--border) h-10 px-6 py-2 rounded-md">
-            Get Started <IoArrowForward size={18} />
+        <div className="flex justify-center my-4">
+          <button className="flex items-center gap-2 border border-(--border) px-6 py-2 rounded-md group">
+            Get Started <IoArrowForward size={18} className="group-hover:translate-x-1.5 duration-300" />
           </button>
         </div>
       </Container>

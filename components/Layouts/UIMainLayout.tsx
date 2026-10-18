@@ -19,7 +19,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
       title: "Getting Started",
       items: [
         { name: "Introduction", path: "/ui" },
-        { name: "Installation", path: "/installation" },
+        { name: "Installation", path: "/ui/installation" },
         { name: "Usage", path: "/usage" },
       ],
     },

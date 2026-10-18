@@ -117,8 +117,8 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
                         aria-current={isActive ? "page" : undefined}
                         className={`block rounded-r-lg border-l-2 px-3 py-2 text-sm transition-colors duration-200 ${
                           isActive
-                            ? "border-lime-500 bg-lime-50  font-semibold text-green-700"
-                            : "border-transparent text-gray-600 hover:border-lime-400 hover:bg-gray-50 hover:text-gray-950"
+                            ? "border-lime-500 bg-lime-50/20  font-semibold text-lime-600"
+                            : "border-transparent text-gray-600 hover:border-lime-400 hover:bg-gray-50/50 hover:text-gray-950"
                         }`}
                       >
                         {item.name}
@@ -141,7 +141,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
           sidebarOpen ? "ml-64" : "ml-0"
         }`}
       >
-        <div className="p-4 sm:p-6 lg:p-8">{children}</div>
+        <div className="p-4 sm:p-6">{children}</div>
       </main>
     </div>
   );

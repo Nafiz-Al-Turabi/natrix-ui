@@ -61,12 +61,12 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
             onClick={() => setSidebarOpen((prev) => !prev)}
             aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
             aria-expanded={sidebarOpen}
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-500"
+            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100/50 hover:text-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-500"
           >
             {sidebarOpen ? (
-              <TbLayoutSidebarLeftCollapse size={22} />
+              <TbLayoutSidebarLeftCollapse size={18} />
             ) : (
-              <BiFoodMenu size={24} />
+              <BiFoodMenu size={18} />
             )}
           </button>
 

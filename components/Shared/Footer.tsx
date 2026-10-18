@@ -63,7 +63,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="text-sm opacity-70">
-              © {new Date().getFullYear()} Natrix UI. All rights reserved.
+              © 2026 Natrix UI. All rights reserved.
             </div>
           </div>
         </div>

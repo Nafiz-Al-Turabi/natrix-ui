@@ -146,7 +146,7 @@ export default function Installation() {
             </div>
 
             {/* Terminal */}
-            <div className="bg-[#101110] p-5 text-gray-200 sm:p-6">
+            <div className="bg-background p-5  sm:p-6">
               <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -211,7 +211,7 @@ export default function Installation() {
             Next.js application using the package's documented export path.
           </p>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10">
+          <div className="mt-6 overflow-hidden rounded-2xl border border-(--border)">
             <div className="flex items-center justify-between border-b border-gray-200 px-5 py-3 dark:border-white/10">
               <div className="flex items-center gap-2 text-sm font-medium">
                 <BiCodeAlt className="text-lg text-lime-600 dark:text-lime-400" />
@@ -221,7 +221,7 @@ export default function Installation() {
               <span className="text-xs text-gray-500">TSX</span>
             </div>
 
-            <pre className="overflow-x-auto bg-gray-50 p-5 text-sm leading-7 text-gray-700 dark:bg-[#101110] dark:text-gray-300 sm:p-6">
+            <pre className="overflow-x-auto bg-background p-5 text-sm leading-7  sm:p-6">
               <code>{`import React from "react";
 // Replace this example with the actual
 // exports provided by your package.

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import Container from "../Layouts/Container";

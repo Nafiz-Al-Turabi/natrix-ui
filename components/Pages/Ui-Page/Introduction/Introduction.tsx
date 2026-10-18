@@ -401,7 +401,7 @@ export default function IntroductionPage() {
         </Container>
       </div>
       {/* Footer Note */}
-      <div className="my-3 border-t border-gray-200 dark:border-white/10">
+      <div className="my-3 border-t border-gray-200 pt-3 dark:border-white/10">
         <p className="text-sm leading-7 text-gray-500 dark:text-gray-400 max-w-339 mx-auto ">
           Thank you for exploring Natrix UI. We hope it helps you build
           interfaces that are more consistent, maintainable, and enjoyable to

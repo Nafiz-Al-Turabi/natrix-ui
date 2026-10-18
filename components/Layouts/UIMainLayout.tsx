@@ -54,7 +54,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
-      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center gap- border-b border-(--border) bg-background px-4 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center border-b border-(--border) bg-background px-4 backdrop-blur-md bg-[repeating-linear-gradient(135deg,var(--pattern)_0,var(--pattern)_1px,transparent_0,transparent_12px)]">
         <div className="flex w-full items-center">
           <button
             type="button"
@@ -92,7 +92,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
             placeholder="Search ui"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded border border-(--border) outline-none px-3 py-2 text-sm text-gray-600 placeholder-gray-400 focus:border-lime-500 focus:border"
+            className="w-full rounded-md border border-(--border) outline-none px-3 py-2 text-sm text-gray-600 placeholder-gray-400 focus:border-lime-500 focus:border"
           />
         </div>
         <nav className="h-full overflow-y-auto px-4 py-6">

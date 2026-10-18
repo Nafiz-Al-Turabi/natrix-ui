@@ -258,7 +258,7 @@ export default function Example() {
       {/* Step 3 */}
       <div className="border-y border-(--border) my-3">
         <Container>
-          <div className="mt-3">
+          <div className="my-3">
             <div className="flex items-center gap-3">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-lime-500/10 text-sm font-bold text-lime-600 dark:text-lime-400">
                 03

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiChevronDown, BiFoodMenu } from "react-icons/bi";
 import Link from "next/link";
 import { TbLayoutSidebarLeftCollapse } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../Shared/ThemeToggle";
+import ScreenRestriction from "../Shared/ScreenRestriction";
 
 const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -13,6 +14,14 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const pathname = usePathname();
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const navigation = [
     {
@@ -51,6 +60,9 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
       ),
     }))
     .filter((section) => section.items.length > 0);
+  if (isMobile) {
+    return <ScreenRestriction />;
+  }
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}

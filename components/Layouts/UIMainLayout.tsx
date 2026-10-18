@@ -141,7 +141,8 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
           sidebarOpen ? "ml-64" : "ml-0"
         }`}
       >
-        <div className="p-4 sm:p-6">{children}</div>
+        {/* <div className="p-4 sm:p-6">{children}</div> */}
+        <div className="">{children}</div>
       </main>
     </div>
   );

@@ -54,7 +54,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
   return (
     <div className="min-h-screen bg-background">
       {/* Fixed Header */}
-      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center border-b border-(--border) bg-background px-4 backdrop-blur-md bg-[repeating-linear-gradient(135deg,var(--pattern)_0,var(--pattern)_1px,transparent_0,transparent_12px)]">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center border-b border-(--border) bg-background px-4 backdrop-blur-md bg-[repeating-linear-gradient(35deg,var(--pattern)_0,var(--pattern)_1px,transparent_0,transparent_4px)]">
         <div className="flex w-full items-center">
           <button
             type="button"

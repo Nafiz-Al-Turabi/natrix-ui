@@ -36,7 +36,7 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
       title: "Components",
       items: [
         { name: "Tooltips", path: "/ui/tooltips" },
-        { name: "Card", path: "/cards" },
+        { name: "Modals", path: "/ui/modals" },
         { name: "Input", path: "/input" },
         { name: "Modal", path: "/modal" },
         { name: "Table", path: "/table" },

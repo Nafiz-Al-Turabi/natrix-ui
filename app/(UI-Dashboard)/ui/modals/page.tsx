@@ -5,7 +5,6 @@ export default function ModalsPage() {
   return (
     <div>
       <ModalUi />
-      
     </div>
   );
 }

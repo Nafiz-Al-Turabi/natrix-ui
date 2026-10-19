@@ -2,7 +2,14 @@ import Container from "@/components/Layouts/Container";
 import Header from "@/components/Shared/Header";
 import Tooltip from "@/components/Ui-Comp/Tooltips/Tooltip";
 import TooltipUse from "./TooltipUses/TooltipUse";
-import { FiTrash2, FiEdit2, FiShare2, FiInfo, FiLock, FiStar } from "react-icons/fi";
+import {
+  FiTrash2,
+  FiEdit2,
+  FiShare2,
+  FiInfo,
+  FiLock,
+  FiStar,
+} from "react-icons/fi";
 
 export default function Tooltips() {
   return (
@@ -23,11 +30,22 @@ export default function Tooltips() {
               <h2 className="text-base font-semibold ">Positions</h2>
               <p className="mt-1 text-sm">
                 Tooltip supports four positions:{" "}
-                <code className="rounded bg-lime-600 px-1 py-0.5 text-xs font-mono">top</code>,{" "}
-                <code className="rounded bg-lime-600 px-1 py-0.5 text-xs font-mono">bottom</code>,{" "}
-                <code className="rounded bg-lime-600 px-1 py-0.5 text-xs font-mono">left</code>, and{" "}
-                <code className="rounded bg-lime-600 px-1 py-0.5 text-xs font-mono">right</code>.
-                Hover over each button to see the tooltip appear.
+                <code className="rounded bg-lime-600 text-black px-1 py-0.5 text-xs">
+                  top
+                </code>
+                ,{" "}
+                <code className="rounded bg-lime-600 text-black px-1 py-0.5 text-xs">
+                  bottom
+                </code>
+                ,{" "}
+                <code className="rounded bg-lime-600 text-black px-1 py-0.5 text-xs">
+                  left
+                </code>
+                , and{" "}
+                <code className="rounded bg-lime-600 text-black px-1 py-0.5 text-xs">
+                  right
+                </code>
+                . Hover over each button to see the tooltip appear.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-10 rounded-xl border border-(--border) bg-background py-12">
@@ -71,11 +89,11 @@ export default function Tooltips() {
             <div>
               <h2 className="text-base font-semibold ">Real-world Examples</h2>
               <p className="mt-1 text-sm">
-                Tooltips work with any child element — icon buttons, form labels, disabled inputs, and more.
+                Tooltips work with any child element — icon buttons, form
+                labels, disabled inputs, and more.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-6 rounded-xl border border-(--border) bg-background px-8 py-10">
-
               {/* Delete icon */}
               <div className="flex flex-col items-center gap-2">
                 <Tooltip position="top" content="Delete item">
@@ -149,38 +167,56 @@ export default function Tooltips() {
               <h2 className="text-base font-semibold ">Props</h2>
               <p className="mt-1 text-sm">
                 All available props for the{" "}
-                <code className="rounded bg-lime-600 px-1 py-0.5 text-xs font-mono">Tooltip</code> component.
+                <code className="rounded bg-lime-600 text-black px-1 py-0.5 text-xs font-mono">
+                  Tooltip
+                </code>{" "}
+                component.
               </p>
             </div>
             <div className="overflow-x-auto rounded-xl border border-(--border)">
               <table className="min-w-full text-sm">
-                <thead className="bg-lime-500">
+                <thead className="">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold">Prop</th>
                     <th className="px-4 py-3 text-left font-semibold">Type</th>
-                    <th className="px-4 py-3 text-left font-semibold">Default</th>
-                    <th className="px-4 py-3 text-left font-semibold">Description</th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      Default
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      Description
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="">
                   <tr>
-                    <td className="px-4 py-3 font-mono text-xs text-lime-600">children</td>
-                    <td className="px-4 py-3 font-mono text-xs text-blue-600">ReactNode</td>
+                    <td className="px-4 py-3 font-mono text-xs text-lime-600 ">
+                      children
+                    </td>
+                    <td className="px-4 py-3 font-mono text-xs text-blue-600">
+                      ReactNode
+                    </td>
                     <td className="px-4 py-3 text-xs">—</td>
                     <td className="px-4 py-3 text-xs">
-                      The trigger element. Any React node — button, span, icon, etc.
+                      The trigger element. Any React node — button, span, icon,
+                      etc.
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-mono text-xs text-lime-600">content</td>
-                    <td className="px-4 py-3 font-mono text-xs text-blue-600">string</td>
+                    <td className="px-4 py-3 font-mono text-xs text-lime-600">
+                      content
+                    </td>
+                    <td className="px-4 py-3 font-mono text-xs text-blue-600">
+                      string
+                    </td>
                     <td className="px-4 py-3 text-xs">—</td>
                     <td className="px-4 py-3 text-xs">
                       The text to display inside the tooltip bubble.
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-mono text-xs text-lime-600">position</td>
+                    <td className="px-4 py-3 font-mono text-xs text-lime-600">
+                      position
+                    </td>
                     <td className="px-4 py-3 font-mono text-xs text-blue-600">
                       {'"top" | "bottom" | "left" | "right"'}
                     </td>
@@ -202,20 +238,32 @@ export default function Tooltips() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
-                Wrap <strong>any</strong> element — button, icon, badge, label — as the trigger.
+                Wrap <strong>any</strong> element — button, icon, badge, label —
+                as the trigger.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
                 For <strong>disabled</strong> buttons, wrap them in a{" "}
-                <code className="rounded bg-lime-600 px-1 text-xs font-mono">&lt;span&gt;</code> so hover events still fire.
+                <code className="rounded bg-lime-600 px-1 text-xs font-mono">
+                  &lt;span&gt;
+                </code>{" "}
+                so hover events still fire.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
-                Use <code className="rounded bg-lime-600 px-1 text-xs font-mono">position</code> to avoid clipping at viewport edges.
+                Use{" "}
+                <code className="rounded bg-lime-600 px-1 text-xs font-mono">
+                  position
+                </code>{" "}
+                to avoid clipping at viewport edges.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-yellow-500">⚠</span>
-                Keep <code className="rounded bg-lime-600 px-1 text-xs font-mono">content</code> short — tooltips are hints, not paragraphs.
+                Keep{" "}
+                <code className="rounded bg-lime-600 px-1 text-xs font-mono">
+                  content
+                </code>{" "}
+                short — tooltips are hints, not paragraphs.
               </li>
             </ul>
           </section>
@@ -229,4 +277,3 @@ export default function Tooltips() {
     </div>
   );
 }
-

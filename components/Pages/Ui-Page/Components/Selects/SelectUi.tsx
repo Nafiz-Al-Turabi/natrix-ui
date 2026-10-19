@@ -29,7 +29,7 @@ const skillOptions = [
 
 export default function SelectUi() {
   const [basicVal, setBasicVal] = useState("");
-  const [preselectedVal, setPreselectedVal] = useState("engineering");
+  const [disabledVal] = useState("design");
 
   const [multiBasic, setMultiBasic] = useState<string[]>([]);
   const [multiPreselected, setMultiPreselected] = useState<string[]>(["react", "nextjs"]);
@@ -38,9 +38,9 @@ export default function SelectUi() {
   return (
     <div>
       <Container>
-        <div className="space-y-12 py-4">
+        <div className="space-y-4">
 
-          {/* ── Page Header ── */}
+          {/* Page Header */}
           <div className="py-3">
             <Header
               title="Select"
@@ -48,25 +48,28 @@ export default function SelectUi() {
             />
           </div>
 
-          {/* ══════════════════════════════════════
-              SECTION 1: Single Select
-          ══════════════════════════════════════ */}
+          {/* ── Section: Single Select ── */}
           <section className="space-y-4">
             <div>
-              <h2 className="text-base font-semibold text-gray-900">Single Select</h2>
-              <p className="mt-1 text-sm text-gray-500">
-                A custom dropdown that replaces the native{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">&lt;select&gt;</code>.
-                Supports smart up/down direction detection, keyboard{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">Escape</code> to close,
-                and click-outside dismiss.
+              <h2 className="text-base font-semibold">Single Select</h2>
+              <p className="mt-1 text-sm">
+                A fully custom dropdown. Supports smart flip direction,{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  Escape
+                </code>{" "}
+                to close, click-outside dismiss, and a{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  disabled
+                </code>{" "}
+                state.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 rounded-xl border border-gray-200 bg-gray-50 p-8 sm:grid-cols-2">
+            {/* Demo box */}
+            <div className="flex flex-wrap items-start justify-center gap-10 rounded-xl border border-(--border) bg-background py-12 px-8">
               {/* Basic */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Basic</p>
+              <div className="flex flex-col gap-2 w-64">
+                <p className="text-xs font-medium">Basic</p>
                 <CustomSelect
                   options={departmentOptions}
                   value={basicVal}
@@ -74,79 +77,62 @@ export default function SelectUi() {
                   placeholder="Select a department"
                 />
                 {basicVal && (
-                  <p className="text-xs text-gray-400">
-                    Selected: <span className="font-medium text-gray-700">{basicVal}</span>
+                  <p className="text-xs text-muted-foreground">
+                    Selected:{" "}
+                    <span className="font-medium">{basicVal}</span>
                   </p>
                 )}
               </div>
 
-              {/* Pre-selected */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Pre-selected value</p>
-                <CustomSelect
-                  options={departmentOptions}
-                  value={preselectedVal}
-                  onChange={setPreselectedVal}
-                  placeholder="Select a department"
-                />
-              </div>
-
               {/* Disabled */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Disabled state</p>
+              <div className="flex flex-col gap-2 w-64">
+                <p className="text-xs font-medium">Disabled</p>
                 <CustomSelect
                   options={departmentOptions}
-                  value="design"
+                  value={disabledVal}
                   disabled
                   placeholder="Select a department"
-                />
-              </div>
-
-              {/* Empty options */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">No options</p>
-                <CustomSelect
-                  options={[]}
-                  placeholder="Nothing to choose from"
                 />
               </div>
             </div>
           </section>
 
-          {/* Single Select Props */}
+          {/* ── Select Props ── */}
           <section className="space-y-3">
             <div>
-              <h2 className="text-base font-semibold text-gray-900">Select Props</h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <h2 className="text-base font-semibold">Props</h2>
+              <p className="mt-1 text-sm">
                 All available props for the{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">CustomSelect</code>{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  CustomSelect
+                </code>{" "}
                 component.
               </p>
             </div>
-            <div className="overflow-x-auto rounded-xl border border-gray-200">
-              <table className="min-w-full divide-y divide-gray-200 text-sm">
-                <thead className="bg-gray-50">
+            <div className="overflow-x-auto rounded-xl border border-(--border)">
+              <table className="min-w-full divide-y divide-(--border) text-sm">
+                <thead className="bg-background">
                   <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Prop</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Type</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Default</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Description</th>
+                    <th className="px-4 py-3 text-left font-semibold">Prop</th>
+                    <th className="px-4 py-3 text-left font-semibold">Type</th>
+                    <th className="px-4 py-3 text-left font-semibold">Default</th>
+                    <th className="px-4 py-3 text-left font-semibold">Description</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
+                <tbody className="divide-y divide-(--border) bg-background">
                   {[
                     ["options", "SelectOption[]", "—", "Array of { label, value } objects to display."],
                     ["value", "string", "undefined", "Currently selected value."],
-                    ["onChange", "(value: string) => void", "undefined", "Called with the new value when an option is selected."],
+                    ["onChange", "(value: string) => void", "undefined", "Called with the new value on selection."],
                     ["placeholder", "string", '"Select an option"', "Text shown when no value is selected."],
                     ["disabled", "boolean", "false", "Disables the trigger and prevents interaction."],
                     ["className", "string", '""', "Extra classes applied to the root wrapper."],
                   ].map(([prop, type, def, desc]) => (
                     <tr key={prop}>
-                      <td className="px-4 py-3 font-mono text-xs text-gray-800">{prop}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-lime-500">{prop}</td>
                       <td className="px-4 py-3 font-mono text-xs text-blue-600">{type}</td>
-                      <td className="px-4 py-3 font-mono text-xs text-gray-500">{def}</td>
-                      <td className="px-4 py-3 text-xs text-gray-600">{desc}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{def}</td>
+                      <td className="px-4 py-3 text-xs text-muted-foreground">{desc}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -154,28 +140,39 @@ export default function SelectUi() {
             </div>
           </section>
 
-          {/* Single Select Code */}
+          {/* Single Select Code Preview */}
           <SelectUse />
 
-          {/* ══════════════════════════════════════
-              SECTION 2: Multi Select
-          ══════════════════════════════════════ */}
+          {/* ── Section: Multi Select ── */}
           <section className="space-y-4">
             <div>
-              <h2 className="text-base font-semibold text-gray-900">Multi Select</h2>
-              <p className="mt-1 text-sm text-gray-500">
-                Select multiple values with inline tag badges. Supports{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">searchable</code>,{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">clearable</code>,{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">selectAll</code>, and per-option{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">disabled</code> state.
+              <h2 className="text-base font-semibold">Multi Select</h2>
+              <p className="mt-1 text-sm">
+                Select multiple values displayed as inline tag badges. Supports{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  searchable
+                </code>
+                ,{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  clearable
+                </code>
+                ,{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  selectAll
+                </code>
+                , and per-option{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  disabled
+                </code>
+                .
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 rounded-xl border border-gray-200 bg-gray-50 p-8 sm:grid-cols-2">
-              {/* Basic multiselect */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Basic</p>
+            {/* Demo box */}
+            <div className="flex flex-wrap items-start justify-center gap-10 rounded-xl border border-(--border) bg-background py-12 px-8">
+              {/* Basic */}
+              <div className="flex flex-col gap-2 w-72">
+                <p className="text-xs font-medium">With search &amp; select-all</p>
                 <MultiSelect
                   options={skillOptions}
                   value={multiBasic}
@@ -183,15 +180,15 @@ export default function SelectUi() {
                   placeholder="Pick your skills"
                 />
                 {multiBasic.length > 0 && (
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     {multiBasic.length} selected
                   </p>
                 )}
               </div>
 
               {/* Pre-selected */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Pre-selected values</p>
+              <div className="flex flex-col gap-2 w-72">
+                <p className="text-xs font-medium">Pre-selected values</p>
                 <MultiSelect
                   options={skillOptions}
                   value={multiPreselected}
@@ -200,11 +197,9 @@ export default function SelectUi() {
                 />
               </div>
 
-              {/* No search, no select-all */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">
-                  Without search &amp; select-all
-                </p>
+              {/* No search */}
+              <div className="flex flex-col gap-2 w-72">
+                <p className="text-xs font-medium">Without search &amp; select-all</p>
                 <MultiSelect
                   options={departmentOptions}
                   value={multiNoSearch}
@@ -216,8 +211,8 @@ export default function SelectUi() {
               </div>
 
               {/* Disabled */}
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gray-500">Disabled state</p>
+              <div className="flex flex-col gap-2 w-72">
+                <p className="text-xs font-medium">Disabled</p>
                 <MultiSelect
                   options={skillOptions}
                   value={["react", "nextjs"]}
@@ -228,45 +223,47 @@ export default function SelectUi() {
             </div>
           </section>
 
-          {/* MultiSelect Props */}
+          {/* ── MultiSelect Props ── */}
           <section className="space-y-3">
             <div>
-              <h2 className="text-base font-semibold text-gray-900">MultiSelect Props</h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <h2 className="text-base font-semibold">MultiSelect Props</h2>
+              <p className="mt-1 text-sm">
                 All available props for the{" "}
-                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs font-mono">MultiSelect</code>{" "}
+                <code className="rounded bg-lime-400 text-black px-1 py-0.5 text-xs font-mono">
+                  MultiSelect
+                </code>{" "}
                 component.
               </p>
             </div>
-            <div className="overflow-x-auto rounded-xl border border-gray-200">
-              <table className="min-w-full divide-y divide-gray-200 text-sm">
-                <thead className="bg-gray-50">
+            <div className="overflow-x-auto rounded-xl border border-(--border)">
+              <table className="min-w-full divide-y divide-(--border) text-sm">
+                <thead className="bg-background">
                   <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Prop</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Type</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Default</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">Description</th>
+                    <th className="px-4 py-3 text-left font-semibold">Prop</th>
+                    <th className="px-4 py-3 text-left font-semibold">Type</th>
+                    <th className="px-4 py-3 text-left font-semibold">Default</th>
+                    <th className="px-4 py-3 text-left font-semibold">Description</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
+                <tbody className="divide-y divide-(--border) bg-background">
                   {[
                     ["options", "MultiSelectOption[]", "—", "Array of { label, value, disabled? } objects."],
                     ["value", "string[]", "[]", "Array of currently selected values."],
                     ["onChange", "(value: string[]) => void", "undefined", "Called with the updated selected array."],
                     ["placeholder", "string", '"Select options"', "Text shown when nothing is selected."],
-                    ["searchPlaceholder", "string", '"Search options..."', "Placeholder text inside the search input."],
+                    ["searchPlaceholder", "string", '"Search options..."', "Placeholder for the search input."],
                     ["disabled", "boolean", "false", "Disables the entire component."],
-                    ["searchable", "boolean", "true", "Show search input at the top of the dropdown."],
+                    ["searchable", "boolean", "true", "Show a search input at the top of the dropdown."],
                     ["clearable", "boolean", "true", "Show clear-all × button when values are selected."],
                     ["selectAll", "boolean", "true", "Show Select all / Clear all toggle button."],
                     ["maxHeight", "number", "240", "Max height (px) of the scrollable options list."],
                     ["className", "string", '""', "Extra classes applied to the root wrapper."],
                   ].map(([prop, type, def, desc]) => (
                     <tr key={prop}>
-                      <td className="px-4 py-3 font-mono text-xs text-gray-800">{prop}</td>
-                      <td className="px-4 py-3 font-mono text-xs text-blue-600">{type}</td>
-                      <td className="px-4 py-3 font-mono text-xs text-gray-500">{def}</td>
-                      <td className="px-4 py-3 text-xs text-gray-600">{desc}</td>
+                      <td className="px-4 py-3 font-mono text-xs">{prop}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-lime-600">{type}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{def}</td>
+                      <td className="px-4 py-3 text-xs text-muted-foreground">{desc}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -276,34 +273,45 @@ export default function SelectUi() {
 
           {/* ── Usage Tips ── */}
           <section className="space-y-3">
-            <h2 className="text-base font-semibold text-gray-900">Usage Tips</h2>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <h2 className="text-base font-semibold">Usage Tips</h2>
+            <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
-                Both components detect available viewport space and flip the dropdown{" "}
-                <strong>up</strong> or <strong>down</strong> automatically.
+                Both components auto-detect viewport space and flip the dropdown{" "}
+                <strong>up</strong> or <strong>down</strong>.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
-                Press <code className="rounded bg-gray-100 px-1 text-xs font-mono">Escape</code> or
-                click outside to dismiss the dropdown.
+                Press{" "}
+                <code className="rounded bg-lime-400 text-black px-1 text-xs font-mono">
+                  Escape
+                </code>{" "}
+                or click outside to close the dropdown.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-green-500">✓</span>
                 Mark individual options with{" "}
-                <code className="rounded bg-gray-100 px-1 text-xs font-mono">disabled: true</code> in
-                MultiSelect to prevent selection while keeping them visible.
+                <code className="rounded bg-lime-400 text-black px-1 text-xs font-mono">
+                  disabled: true
+                </code>{" "}
+                in MultiSelect to keep them visible but unselectable.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 text-yellow-500">⚠</span>
-                Set <code className="rounded bg-gray-100 px-1 text-xs font-mono">searchable={"{false}"}</code> and{" "}
-                <code className="rounded bg-gray-100 px-1 text-xs font-mono">selectAll={"{false}"}</code> for
-                compact dropdowns with few options.
+                Use{" "}
+                <code className="rounded bg-lime-400 text-black px-1 text-xs font-mono">
+                  searchable={"{false}"}
+                </code>{" "}
+                and{" "}
+                <code className="rounded bg-lime-400 text-black px-1 text-xs font-mono">
+                  selectAll={"{false}"}
+                </code>{" "}
+                for compact dropdowns with a small option list.
               </li>
             </ul>
           </section>
 
-          {/* MultiSelect Code */}
+          {/* MultiSelect Code Preview */}
           <MultiSelectUse />
 
         </div>

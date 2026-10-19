@@ -1,8 +1,6 @@
 import Container from "@/components/Layouts/Container";
-import CodePreview from "@/components/Shared/CodePreview";
 import Header from "@/components/Shared/Header";
 import Tooltip from "@/components/Ui-Comp/Tooltips/Tooltip";
-import React from "react";
 import TooltipUse from "./TooltipUses/TooltipUse";
 
 export default function Tooltips() {

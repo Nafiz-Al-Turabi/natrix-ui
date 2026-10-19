@@ -53,7 +53,7 @@ export default function Tooltips() {
             <p className="text-xs">Right</p>
           </div>
         </div>
-       <div>
+       <div className="mt-10">
         <TooltipUse/>
        </div>
       </Container>

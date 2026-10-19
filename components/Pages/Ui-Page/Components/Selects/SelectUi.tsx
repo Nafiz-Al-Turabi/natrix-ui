@@ -74,7 +74,7 @@ export default function SelectUi() {
                   options={departmentOptions}
                   value={basicVal}
                   onChange={setBasicVal}
-                  placeholder="Select a department"
+                  placeholder="Select a department" 
                 />
                 {basicVal && (
                   <p className="text-xs text-muted-foreground">

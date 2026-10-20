@@ -48,7 +48,7 @@ export default function SelectUi() {
             />
           </div>
 
-          {/* ── Section: Single Select ── */}
+          {/* ── Section: Single Select  ── */}
           <section className="space-y-4">
             <div>
               <h2 className="text-base font-semibold">Single Select</h2>

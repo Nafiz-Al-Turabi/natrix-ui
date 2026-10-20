@@ -38,7 +38,6 @@ const UIMainLayout: React.FC<{ children: React.ReactNode }> = ({
         { name: "Tooltips", path: "/ui/tooltips" },
         { name: "Modals", path: "/ui/modals" },
         { name: "Selects", path: "/ui/selects" },
-        { name: "Modal", path: "/modal" },
         { name: "Table", path: "/table" },
       ],
     },
